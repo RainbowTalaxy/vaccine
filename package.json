@@ -4,11 +4,14 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "node app.js"
+    "test": "node app.js",
+    "pre": "node pre.js"
   },
   "dependencies": {
     "express": "^4.17.1",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "express-session": "^1.17.1",
+    "showdown": "^1.9.1"
   },
   "author": "talaxy",
   "license": "ISC"
