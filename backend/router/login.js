@@ -1,7 +1,6 @@
 const router = new require('express').Router()
 
 router.all('/login', (req, res) => {
-    console.log(req.body)
     if (req.body.u_name == 'root' && req.body.u_pwd == 'admin') {
         req.session.u_name = 'root'
         req.session.u_pwd = 'admin'
