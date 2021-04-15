@@ -18,7 +18,7 @@
 |n_date     |新闻日期      |date        |not null                   |
 |n_link     |新闻链接      |text        |not null                   |
 
-### 问答表 qna
+### 问答表
 
 表名 `qna`
 
@@ -37,7 +37,27 @@
 ### 管理员登陆
 `POST` [/login](http://localhost:3000/login)
 
-|参数    |类型    |默认值  |
+|参数    |类型    |参考值  |
 |:------|:------|:------|
 |u_name |String |root   |
 |u_pwd  |String |root   |
+
+### 资讯列表
+`GET` [/news/list](http://localhost:3000/news/list)
+
+### 添加资讯
+`POST` [/news/add](http://localhost:3000/news/add)
+
+|参数        |类型    |参考值                                     |
+|:----------|:------|:------------------------------------------|
+|n_title    |String |News Title                                 |
+|n_short    |String |Here is a short desription of the news.    |
+|n_date     |Date   |2021-4-16                                  |
+|n_link     |String |https://talaxy.cn                          |
+
+### 删除资讯
+`DELETE` [/news/remove](http://localhost:3000/news/remove)
+
+|参数    |类型    |参考值  |
+|:------|:------|:------|
+|n_id   |Int    |17     |

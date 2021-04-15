@@ -51,7 +51,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="问答表-qna">问答表 qna</h3>
+<h3 id="问答表">问答表</h3>
 <p>表名 <code>qna</code></p>
 <table>
 <thead>
@@ -99,7 +99,7 @@
 <tr>
 <th id="参数" style="text-align:left;">参数</th>
 <th id="类型" style="text-align:left;">类型</th>
-<th id="默认值" style="text-align:left;">默认值</th>
+<th id="参考值" style="text-align:left;">参考值</th>
 </tr>
 </thead>
 <tbody>
@@ -112,6 +112,59 @@
 <td style="text-align:left;">u_pwd</td>
 <td style="text-align:left;">String</td>
 <td style="text-align:left;">root</td>
+</tr>
+</tbody>
+</table>
+<h3 id="资讯列表">资讯列表</h3>
+<p><code>GET</code> <a href="http://localhost:3000/news/list">/news/list</a></p>
+<h3 id="添加资讯">添加资讯</h3>
+<p><code>POST</code> <a href="http://localhost:3000/news/add">/news/add</a></p>
+<table>
+<thead>
+<tr>
+<th id="参数" style="text-align:left;">参数</th>
+<th id="类型" style="text-align:left;">类型</th>
+<th id="参考值" style="text-align:left;">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">n_title</td>
+<td style="text-align:left;">String</td>
+<td style="text-align:left;">News Title</td>
+</tr>
+<tr>
+<td style="text-align:left;">n_short</td>
+<td style="text-align:left;">String</td>
+<td style="text-align:left;">Here is a short desription of the news.</td>
+</tr>
+<tr>
+<td style="text-align:left;">n_date</td>
+<td style="text-align:left;">Date</td>
+<td style="text-align:left;">2021-4-16</td>
+</tr>
+<tr>
+<td style="text-align:left;">n_link</td>
+<td style="text-align:left;">String</td>
+<td style="text-align:left;"><a href="https://talaxy.cn">https://talaxy.cn</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="删除资讯">删除资讯</h3>
+<p><code>DELETE</code> <a href="http://localhost:3000/news/remove">/news/remove</a></p>
+<table>
+<thead>
+<tr>
+<th id="参数" style="text-align:left;">参数</th>
+<th id="类型" style="text-align:left;">类型</th>
+<th id="参考值" style="text-align:left;">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">n_id</td>
+<td style="text-align:left;">Int</td>
+<td style="text-align:left;">17</td>
 </tr>
 </tbody>
 </table>

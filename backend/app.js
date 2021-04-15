@@ -27,10 +27,11 @@ app.use(session({
 }))
 
 app.all('/hello', (_, res) => {
-    res.send('hello world')
+    res.send('hello')
 })
 
 app.use(require('./router/login'))
+app.use(require('./router/news'))
 
 app.listen(port, () => {
     console.log('listening on port ' + port + '...')
