@@ -22,6 +22,13 @@ router.get('/qna/list', (_, res) => {
 })
 
 router.post('/qna/add', (req, res) => {
+    if (!req.session.pass || req.session.pass == false) {
+        res.send({
+            code: 400,
+            msg: '身份失效'
+        })
+        return
+    }
     const { q_question, q_answer, q_date } = req.body
     if (q_question && q_answer && q_date) {
         qna_db.add({
@@ -48,6 +55,13 @@ router.post('/qna/add', (req, res) => {
 })
 
 router.delete('/qna/remove', (req, res) => {
+    if (!req.session.pass || req.session.pass == false) {
+        res.send({
+            code: 400,
+            msg: '身份失效'
+        })
+        return
+    }
     if (req.query.q_id) {
         qna_db.removeById(req.query.q_id)
             .then(_ => {

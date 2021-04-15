@@ -22,6 +22,13 @@ router.get('/news/list', (_, res) => {
 })
 
 router.post('/news/add', (req, res) => {
+    if (!req.session.pass || req.session.pass == false) {
+        res.send({
+            code: 400,
+            msg: '身份失效'
+        })
+        return
+    }
     const { n_title, n_short, n_date, n_link } = req.body
     if (n_title && n_short && n_date && n_link) {
         news_db.add({
@@ -49,6 +56,13 @@ router.post('/news/add', (req, res) => {
 })
 
 router.delete('/news/remove', (req, res) => {
+    if (!req.session.pass || req.session.pass == false) {
+        res.send({
+            code: 400,
+            msg: '身份失效'
+        })
+        return
+    }
     if (req.query.n_id) {
         news_db.removeById(req.query.n_id)
             .then(_ => {
