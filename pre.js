@@ -12,9 +12,11 @@ var html =
 '<head>\n' +
 '<link rel="stylesheet" type="text/css" href="index.css">\n' +
 '</head>\n' +
-'<body class="markdown-body">\n' +
-convertor.makeHtml(readme) +
-'\n</body>\n' +
+'<body>\n' +
+'<div class="markdown-body">' +
+convertor.makeHtml(readme) + '\n' +
+'</div>' +
+'</body>\n' +
 '</html>\n'
 
 fs.writeFileSync('./statics/index.html', html)
