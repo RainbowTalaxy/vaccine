@@ -2,7 +2,7 @@
 
 端口 `3000`
 
-## 数据库
+# 数据库
 
 数据库名 `vaccine`
 
@@ -29,7 +29,7 @@
 |q_question |问答问题      |text        |not null                   |
 |q_answer   |问答回答      |text        |not null                   |
 
-## 接口
+# 接口
 
 ### 测试接口
 `ALL` /hello
@@ -42,8 +42,47 @@
 |u_name |String |root   |
 |u_pwd  |String |root   |
 
+成功返回参考
+```json
+{
+    "code": 200
+}
+```
+
+失败返回参考
+```json
+{
+    "code": 400,
+    "msg": "用户名或密码错误"
+}
+```
+
 ### 资讯列表
 `GET` /news/list
+
+成功返回参考
+```json
+{
+    "code": 200,
+    "list": [
+        {
+            "n_id": 2,
+            "n_title": "《新冠疫苗指南书》即将发布",
+            "n_short": "该项目将在近期发布，尽请期待！",
+            "n_date": "2021-04-14T16:00:00.000Z",
+            "n_link": "https://www.talaxy.cn"
+        }
+    ]
+}
+```
+
+失败返回参考
+```json
+{
+    "code": 401,
+    "msg": "获取资讯列表失败"
+}
+```
 
 ### 添加资讯
 `POST` /news/add
@@ -55,9 +94,39 @@
 |n_date     |Date   |2021-4-16                                  |
 |n_link     |String |https://talaxy.cn                          |
 
+成功返回参考
+```json
+{
+    "code": 200
+}
+```
+
+失败返回参考
+```json
+{
+    "code": 402,
+    "msg": "缺少资讯参数"
+}
+```
+
 ### 删除资讯
 `DELETE` /news/remove
 
 |参数    |类型    |参考值  |
 |:------|:------|:------|
 |n_id   |Int    |17     |
+
+成功返回参考
+```json
+{
+    "code": 200
+}
+```
+
+失败返回参考
+```json
+{
+    "code": 402,
+    "msg": "缺少资讯参数"
+}
+```
