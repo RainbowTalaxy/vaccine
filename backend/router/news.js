@@ -1,9 +1,9 @@
 const router = new require('express').Router()
 const news_db = require('../sql/news')
 
-router.all('/news/hello', (_, res) => {
-    res.send('hello')
-})
+// router.all('/news/hello', (_, res) => {
+//     res.send('hello')
+// })
 
 router.get('/news/list', (_, res) => {
     news_db.findAll()

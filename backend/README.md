@@ -32,10 +32,10 @@
 ## 接口
 
 ### 测试接口
-`ALL` [/hello](http://localhost:3000/hello)
+`ALL` /hello
 
 ### 管理员登陆
-`POST` [/login](http://localhost:3000/login)
+`POST` /login
 
 |参数    |类型    |参考值  |
 |:------|:------|:------|
@@ -43,10 +43,10 @@
 |u_pwd  |String |root   |
 
 ### 资讯列表
-`GET` [/news/list](http://localhost:3000/news/list)
+`GET` /news/list
 
 ### 添加资讯
-`POST` [/news/add](http://localhost:3000/news/add)
+`POST` /news/add
 
 |参数        |类型    |参考值                                     |
 |:----------|:------|:------------------------------------------|
@@ -56,7 +56,7 @@
 |n_link     |String |https://talaxy.cn                          |
 
 ### 删除资讯
-`DELETE` [/news/remove](http://localhost:3000/news/remove)
+`DELETE` /news/remove
 
 |参数    |类型    |参考值  |
 |:------|:------|:------|
