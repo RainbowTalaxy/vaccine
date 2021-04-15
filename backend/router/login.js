@@ -7,9 +7,10 @@ router.post('/login', (req, res) => {
             code: 200
         })
     } else {
+        req.session.pass = false
         res.send({
             code: 400,
-            msg: "用户名或密码错误"
+            msg: "身份失效"
         })
     }
 })
