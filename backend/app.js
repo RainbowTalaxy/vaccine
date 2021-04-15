@@ -33,6 +33,7 @@ app.all('/hello', (_, res) => {
 app.use(require('./router/login'))
 app.use(require('./router/news'))
 app.use(require('./router/qna'))
+app.use(require('./router/notice'))
 
 app.listen(port, () => {
     console.log('listening on port ' + port + '...')
