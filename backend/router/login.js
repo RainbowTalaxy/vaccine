@@ -10,7 +10,7 @@ router.all('/login', (req, res) => {
     } else {
         res.send({
             code: 400,
-            message: "用户名或者密码错误"
+            msg: "用户名或密码错误"
         })
     }
 })

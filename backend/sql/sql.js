@@ -4,7 +4,7 @@ var config = {
     host: 'localhost',
     user: 'root',
     password: 'huangdaju',
-    database: 'contact'
+    database: 'vaccine'
 }
 
 function query(callback) {
@@ -15,69 +15,75 @@ function query(callback) {
 }
 
 function select(tableName) {
-    return (callback = console.log) => {
+    return () => new Promise((resolve, reject) => {
         query(connection => {
             connection.query('select * from ' + tableName, (error, results) => {
-                callback(error, results)
+                error && reject(error)
+                resolve(results)
             })
         })
-    }
+    })
 }
 
 function selectBy(tableName, field) {
-    return (value, callback = console.log) => {
+    return (value) => new Promise((resolve, reject) => {
         query(connection => {
             connection.query('select * from ' + tableName + ' where ' + field + ' = ?', value, (error, results) => {
-                callback(error, results)
+                error && reject(error)
+                resolve(results)
             })
         })
-    }
+    })
 }
 
 function insert(tableName) {
-    return (object, callback = console.log) => {
+    return (object) => new Promise((resolve, reject) => {
         query(connection => {
             connection.query('insert into ' + tableName + ' set ?', object, (error, results) => {
-                callback(error, results)
+                error && reject(error)
+                resolve(results)
             })
         })
-    }
+    })
 }
 
-function update(tableName, field) {
-    return (object, value, callback = console.log) => {
+function updateBy(tableName, field) {
+    return (object, value) => new Promise((resolve, reject) => {
         query(connection => {
             connection.query('update ' + tableName + ' set ? where ' + field + ' = ?', [object, value], (error, results) => {
-                callback(error, results)
+                error && reject(error)
+                resolve(results)
             })
         })
-    }
+    })
 }
 
-function remove(tableName, field) {
-    return (value, callback = console.log) => {
+function removeBy(tableName, field) {
+    return (value) => new Promise((resolve, reject) => {
         query(connection => {
             connection.query('delete from ' + tableName + ' where ' + field + ' = ?', value, function (error, results) {
-                callback(error, results)
+                error && reject(error)
+                resolve(results)
             })
         })
-    }
+    })
 }
 
 function removeWithTwoKeys(tableName, field_1, field_2) {
-    return (value_1, value_2, callback = console.log) => {
+    return (value_1, value_2) => new Promise((resolve, reject) => {
         query(connection => {
             connection.query(
                 'delete from ' + tableName + ' where ' + field_1 + ' = ? and ' + field_2 + ' = ?',
                 [value_1, value_2],
                 (error, results) => {
-                    callback(error, results)
+                    error && reject(error)
+                    resolve(results)
                 }
             )
         })
-    }
+    })
 }
 
 module.exports = {
-    query, select, insert, remove, update, removeWithTwoKeys, selectBy
+    select, insert, removeBy, updateBy, removeWithTwoKeys, selectBy
 }
