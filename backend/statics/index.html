@@ -7,12 +7,14 @@
 <p>端口 <code>3000</code></p>
 <h2 id="数据库">数据库</h2>
 <p>数据库名 <code>vaccine</code></p>
-<h3 id="资讯表-news">资讯表 news</h3>
+<h3 id="资讯表">资讯表</h3>
+<p>表名 <code>news</code></p>
 <table>
 <thead>
 <tr>
 <th id="字段" style="text-align:left;">字段</th>
 <th id="名称" style="text-align:left;">名称</th>
+<th id="类型" style="text-align:left;">类型</th>
 <th id="约束" style="text-align:left;">约束</th>
 </tr>
 </thead>
@@ -20,36 +22,43 @@
 <tr>
 <td style="text-align:left;">n_id</td>
 <td style="text-align:left;">新闻条目ID</td>
-<td style="text-align:left;">bigint(10) primary key auto_increment</td>
+<td style="text-align:left;">bigint(10)</td>
+<td style="text-align:left;">primary key auto_increment</td>
 </tr>
 <tr>
 <td style="text-align:left;">n_title</td>
 <td style="text-align:left;">新闻标题</td>
-<td style="text-align:left;">text not null</td>
+<td style="text-align:left;">text</td>
+<td style="text-align:left;">not null</td>
 </tr>
 <tr>
 <td style="text-align:left;">n_short</td>
 <td style="text-align:left;">新闻简述</td>
-<td style="text-align:left;">text not null</td>
+<td style="text-align:left;">text</td>
+<td style="text-align:left;">not null</td>
 </tr>
 <tr>
 <td style="text-align:left;">n_date</td>
 <td style="text-align:left;">新闻日期</td>
-<td style="text-align:left;">date not null</td>
+<td style="text-align:left;">date</td>
+<td style="text-align:left;">not null</td>
 </tr>
 <tr>
 <td style="text-align:left;">n_link</td>
 <td style="text-align:left;">新闻链接</td>
-<td style="text-align:left;">text not null</td>
+<td style="text-align:left;">text</td>
+<td style="text-align:left;">not null</td>
 </tr>
 </tbody>
 </table>
 <h3 id="问答表-qna">问答表 qna</h3>
+<p>表名 <code>qna</code></p>
 <table>
 <thead>
 <tr>
 <th id="字段" style="text-align:left;">字段</th>
 <th id="名称" style="text-align:left;">名称</th>
+<th id="类型" style="text-align:left;">类型</th>
 <th id="约束" style="text-align:left;">约束</th>
 </tr>
 </thead>
@@ -57,30 +66,34 @@
 <tr>
 <td style="text-align:left;">q_id</td>
 <td style="text-align:left;">问答条目ID</td>
-<td style="text-align:left;">bigint(10) primary key auto_increment</td>
+<td style="text-align:left;">bigint(10)</td>
+<td style="text-align:left;">primary key auto_increment</td>
 </tr>
 <tr>
 <td style="text-align:left;">q_date</td>
 <td style="text-align:left;">问答日期</td>
-<td style="text-align:left;">date not null</td>
+<td style="text-align:left;">date</td>
+<td style="text-align:left;">not null</td>
 </tr>
 <tr>
 <td style="text-align:left;">q_question</td>
 <td style="text-align:left;">问答问题</td>
-<td style="text-align:left;">text not null</td>
+<td style="text-align:left;">text</td>
+<td style="text-align:left;">not null</td>
 </tr>
 <tr>
 <td style="text-align:left;">q_answer</td>
 <td style="text-align:left;">问答回答</td>
-<td style="text-align:left;">text not null</td>
+<td style="text-align:left;">text</td>
+<td style="text-align:left;">not null</td>
 </tr>
 </tbody>
 </table>
 <h2 id="接口">接口</h2>
 <h3 id="测试接口">测试接口</h3>
-<p><a href="http://localhost:3000/hello">/hello</a></p>
+<p><code>ALL</code> <a href="http://localhost:3000/hello">/hello</a></p>
 <h3 id="管理员登陆">管理员登陆</h3>
-<p><a href="http://localhost:3000/login">/login</a></p>
+<p><code>POST</code> <a href="http://localhost:3000/login">/login</a></p>
 <table>
 <thead>
 <tr>
