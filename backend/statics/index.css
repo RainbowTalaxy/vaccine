@@ -1,12 +1,8 @@
 .markdown-body {
-    max-width: 1000px;
-    margin: auto;
-    padding-top: 80px;
-    padding-left: 80px;
-    padding-right: 80px;
-    position: absolute;
-    top: 0; left: 0; bottom: 0; right: 0;
-    border: 1px solid black;
+  margin: auto;
+  max-width: 800px;
+  border: 2px solid grey;
+  padding: 50px;
 }
 
 .markdown-body .octicon {

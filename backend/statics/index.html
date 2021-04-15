@@ -2,15 +2,80 @@
 <head>
 <link rel="stylesheet" type="text/css" href="index.css">
 </head>
-<body class="markdown-body">
-<h1 id="新冠疫苗指南书">新冠疫苗指南书</h1>
-<blockquote>
-  <p>端口 <code>3000</code></p>
-</blockquote>
-<h2 id="启动服务">启动服务</h2>
-<pre><code class="bash language-bash">git clone https://github.com/RainbowTalaxy/vaccine.git
-cd vaccine
-npm test</code></pre>
+<body>
+<div class="markdown-body"><h1 id="新冠疫苗指南书-后端">新冠疫苗指南书-后端</h1>
+<p>端口 <code>3000</code></p>
+<h2 id="数据库">数据库</h2>
+<p>数据库名 <code>vaccine</code></p>
+<h3 id="资讯表-news">资讯表 news</h3>
+<table>
+<thead>
+<tr>
+<th id="字段" style="text-align:left;">字段</th>
+<th id="名称" style="text-align:left;">名称</th>
+<th id="约束" style="text-align:left;">约束</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">n_id</td>
+<td style="text-align:left;">新闻条目ID</td>
+<td style="text-align:left;">bigint(10) primary key auto_increment</td>
+</tr>
+<tr>
+<td style="text-align:left;">n_title</td>
+<td style="text-align:left;">新闻标题</td>
+<td style="text-align:left;">text not null</td>
+</tr>
+<tr>
+<td style="text-align:left;">n_short</td>
+<td style="text-align:left;">新闻简述</td>
+<td style="text-align:left;">text not null</td>
+</tr>
+<tr>
+<td style="text-align:left;">n_date</td>
+<td style="text-align:left;">新闻日期</td>
+<td style="text-align:left;">date not null</td>
+</tr>
+<tr>
+<td style="text-align:left;">n_link</td>
+<td style="text-align:left;">新闻链接</td>
+<td style="text-align:left;">text not null</td>
+</tr>
+</tbody>
+</table>
+<h3 id="问答表-qna">问答表 qna</h3>
+<table>
+<thead>
+<tr>
+<th id="字段" style="text-align:left;">字段</th>
+<th id="名称" style="text-align:left;">名称</th>
+<th id="约束" style="text-align:left;">约束</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">q_id</td>
+<td style="text-align:left;">问答条目ID</td>
+<td style="text-align:left;">bigint(10) primary key auto_increment</td>
+</tr>
+<tr>
+<td style="text-align:left;">q_date</td>
+<td style="text-align:left;">问答日期</td>
+<td style="text-align:left;">date not null</td>
+</tr>
+<tr>
+<td style="text-align:left;">q_question</td>
+<td style="text-align:left;">问答问题</td>
+<td style="text-align:left;">text not null</td>
+</tr>
+<tr>
+<td style="text-align:left;">q_answer</td>
+<td style="text-align:left;">问答回答</td>
+<td style="text-align:left;">text not null</td>
+</tr>
+</tbody>
+</table>
 <h2 id="接口">接口</h2>
 <h3 id="测试接口">测试接口</h3>
 <p><a href="http://localhost:3000/hello">/hello</a></p>
@@ -37,5 +102,5 @@ npm test</code></pre>
 </tr>
 </tbody>
 </table>
-</body>
+</div></body>
 </html>

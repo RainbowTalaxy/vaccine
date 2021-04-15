@@ -1,5 +1,8 @@
 const express = require('express')
 const session = require('express-session')
+const { syncIndex } = require('./util/pre')
+
+syncIndex()
 
 var app = express()
 var port = 3000
