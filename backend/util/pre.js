@@ -10,6 +10,7 @@ function syncIndex() {
     var html = 
     '<html>\n' +
     '<head>\n' +
+    '<meta name="viewport" content="width=device-width, initial-scale=1">' +
     '<link rel="stylesheet" type="text/css" href="index.css" />\n' +
     '<link href="https://unpkg.com/@primer/css@^16.0.0/dist/primer.css" rel="stylesheet" />\n' +
     '</head>\n' +
