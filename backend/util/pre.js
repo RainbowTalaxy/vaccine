@@ -10,7 +10,8 @@ function syncIndex() {
     var html = 
     '<html>\n' +
     '<head>\n' +
-    '<link rel="stylesheet" type="text/css" href="index.css">\n' +
+    '<link rel="stylesheet" type="text/css" href="index.css" />\n' +
+    '<link href="https://unpkg.com/@primer/css@^16.0.0/dist/primer.css" rel="stylesheet" />\n' +
     '</head>\n' +
     '<body>\n' +
     '<div class="markdown-body">' +
