@@ -105,6 +105,50 @@
 </tr>
 </tbody>
 </table>
+<h3 id="接种点表">接种点表</h3>
+<p>表明 <code>site</code></p>
+<table>
+<thead>
+<tr>
+<th id="字段" style="text-align:left;">字段</th>
+<th id="名称" style="text-align:left;">名称</th>
+<th id="类型" style="text-align:left;">类型</th>
+<th id="约束" style="text-align:left;">约束</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">s_id</td>
+<td style="text-align:left;">接种点ID</td>
+<td style="text-align:left;">bigint(10)</td>
+<td style="text-align:left;">primary key auto_increment</td>
+</tr>
+<tr>
+<td style="text-align:left;">s_name</td>
+<td style="text-align:left;">站点名称</td>
+<td style="text-align:left;">text</td>
+<td style="text-align:left;">not null</td>
+</tr>
+<tr>
+<td style="text-align:left;">s_address</td>
+<td style="text-align:left;">详细地址</td>
+<td style="text-align:left;">text</td>
+<td style="text-align:left;">not null</td>
+</tr>
+<tr>
+<td style="text-align:left;">s_longitude</td>
+<td style="text-align:left;">坐标经度</td>
+<td style="text-align:left;">double</td>
+<td style="text-align:left;">not null</td>
+</tr>
+<tr>
+<td style="text-align:left;">s_latitude</td>
+<td style="text-align:left;">坐标纬度</td>
+<td style="text-align:left;">double</td>
+<td style="text-align:left;">not null</td>
+</tr>
+</tbody>
+</table>
 <h1 id="接口">接口</h1>
 <h3 id="测试接口">测试接口</h3>
 <p><code>ALL</code> /hello</p>
@@ -148,9 +192,13 @@
     "list": [
         {
             "n_id": 2,
+            // 新闻标题
             "n_title": "《新冠疫苗指南书》即将发布",
+            // 新闻简述
             "n_short": "该项目将在近期发布，尽请期待！",
+            // 新闻日期
             "n_date": "2021-04-14T16:00:00.000Z",
+            // 新闻链接
             "n_link": "https://www.talaxy.cn"
         }
     ]
@@ -166,6 +214,7 @@
 <thead>
 <tr>
 <th id="参数" style="text-align:left;">参数</th>
+<th id="名称" style="text-align:left;">名称</th>
 <th id="类型" style="text-align:left;">类型</th>
 <th id="参考值" style="text-align:left;">参考值</th>
 </tr>
@@ -173,21 +222,25 @@
 <tbody>
 <tr>
 <td style="text-align:left;">n_title</td>
+<td style="text-align:left;">新闻标题</td>
 <td style="text-align:left;">String</td>
 <td style="text-align:left;">News Title</td>
 </tr>
 <tr>
 <td style="text-align:left;">n_short</td>
+<td style="text-align:left;">新闻简述</td>
 <td style="text-align:left;">String</td>
 <td style="text-align:left;">Here is a short desription of the news.</td>
 </tr>
 <tr>
 <td style="text-align:left;">n_date</td>
+<td style="text-align:left;">新闻日期</td>
 <td style="text-align:left;">Date</td>
 <td style="text-align:left;">2021-4-16</td>
 </tr>
 <tr>
 <td style="text-align:left;">n_link</td>
+<td style="text-align:left;">新闻链接</td>
 <td style="text-align:left;">String</td>
 <td style="text-align:left;"><a href="https://talaxy.cn">https://talaxy.cn</a></td>
 </tr>
@@ -208,6 +261,7 @@
 <thead>
 <tr>
 <th id="参数" style="text-align:left;">参数</th>
+<th id="名称" style="text-align:left;">名称</th>
 <th id="类型" style="text-align:left;">类型</th>
 <th id="参考值" style="text-align:left;">参考值</th>
 </tr>
@@ -215,6 +269,7 @@
 <tbody>
 <tr>
 <td style="text-align:left;">n_id</td>
+<td style="text-align:left;">新闻条目ID</td>
 <td style="text-align:left;">Int</td>
 <td style="text-align:left;">17</td>
 </tr>
@@ -237,8 +292,11 @@
     "list": [
         {
             "q_id": 2,
+            // 问答日期
             "q_date": "2021-04-16T16:00:00.000Z",
+            // 问答问题
             "q_question": "新冠疫苗建议打吗？",
+            // 问答回答
             "q_answer": "当然建议打了。"
         }
     ]
@@ -254,6 +312,7 @@
 <thead>
 <tr>
 <th id="参数" style="text-align:left;">参数</th>
+<th id="名称" style="text-align:left;">名称</th>
 <th id="类型" style="text-align:left;">类型</th>
 <th id="参考值" style="text-align:left;">参考值</th>
 </tr>
@@ -261,16 +320,19 @@
 <tbody>
 <tr>
 <td style="text-align:left;">q_question</td>
+<td style="text-align:left;">问答问题</td>
 <td style="text-align:left;">String</td>
 <td style="text-align:left;">新冠疫苗建议打吗？</td>
 </tr>
 <tr>
 <td style="text-align:left;">q_answer</td>
+<td style="text-align:left;">问答回答</td>
 <td style="text-align:left;">String</td>
 <td style="text-align:left;">当然建议打了。</td>
 </tr>
 <tr>
 <td style="text-align:left;">q_date</td>
+<td style="text-align:left;">问答日期</td>
 <td style="text-align:left;">Date</td>
 <td style="text-align:left;">2021-4-17</td>
 </tr>
@@ -291,6 +353,7 @@
 <thead>
 <tr>
 <th id="参数" style="text-align:left;">参数</th>
+<th id="名称" style="text-align:left;">名称</th>
 <th id="类型" style="text-align:left;">类型</th>
 <th id="参考值" style="text-align:left;">参考值</th>
 </tr>
@@ -298,6 +361,7 @@
 <tbody>
 <tr>
 <td style="text-align:left;">q_id</td>
+<td style="text-align:left;">问答条目ID</td>
 <td style="text-align:left;">Int</td>
 <td style="text-align:left;">2</td>
 </tr>
@@ -325,6 +389,7 @@
 <thead>
 <tr>
 <th id="参数" style="text-align:left;">参数</th>
+<th id="名称" style="text-align:left;">名称</th>
 <th id="类型" style="text-align:left;">类型</th>
 <th id="参考值" style="text-align:left;">参考值</th>
 </tr>
@@ -332,6 +397,7 @@
 <tbody>
 <tr>
 <td style="text-align:left;">content</td>
+<td style="text-align:left;">须知内容</td>
 <td style="text-align:left;">String</td>
 <td style="text-align:left;">疫苗须知！！！！！</td>
 </tr>
@@ -345,6 +411,106 @@
 <pre><code class="json language-json">{
     "code": 420,
     "msg": "缺少须知内容参数"
+}</code></pre>
+<h3 id="接种点列表">接种点列表</h3>
+<p><code>GET</code> /site/list</p>
+<p>成功返回参考</p>
+<pre><code class="json language-json">{
+    "code": 200,
+    "list": [
+        {
+            "s_id": 2,
+            // 接种点名称
+            "s_name": "金科疫苗点",
+            // 站点地址
+            "s_address": "南京市江宁区弘景大道99号",
+            // 坐标经度
+            "s_longitude": 118.899354,
+            // 坐标纬度
+            "s_latitude": 31.903982
+        }
+    ]
+}</code></pre>
+<p>失败返回参考</p>
+<pre><code class="json language-json">{
+    "code": 431,
+    "msg": "获取接种点列表失败"
+}</code></pre>
+<h3 id="添加问答-1">添加问答</h3>
+<p><code>POST</code> /site/add</p>
+<table>
+<thead>
+<tr>
+<th id="参数" style="text-align:left;">参数</th>
+<th id="名称" style="text-align:left;">名称</th>
+<th id="类型" style="text-align:left;">类型</th>
+<th id="参考值" style="text-align:left;">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">s_name</td>
+<td style="text-align:left;">接种点名称</td>
+<td style="text-align:left;">String</td>
+<td style="text-align:left;">金科疫苗点</td>
+</tr>
+<tr>
+<td style="text-align:left;">s_address</td>
+<td style="text-align:left;">站点地址</td>
+<td style="text-align:left;">String</td>
+<td style="text-align:left;">南京市江宁区弘景大道99号</td>
+</tr>
+<tr>
+<td style="text-align:left;">s_longitude</td>
+<td style="text-align:left;">坐标经度</td>
+<td style="text-align:left;">Double</td>
+<td style="text-align:left;">118.899354</td>
+</tr>
+<tr>
+<td style="text-align:left;">s_latitude</td>
+<td style="text-align:left;">坐标纬度</td>
+<td style="text-align:left;">Double</td>
+<td style="text-align:left;">31.903982</td>
+</tr>
+</tbody>
+</table>
+<p>成功返回参考</p>
+<pre><code class="json language-json">{
+    "code": 200
+}</code></pre>
+<p>失败返回参考</p>
+<pre><code class="json language-json">{
+    "code": 432,
+    "msg": "缺少接种点参数"
+}</code></pre>
+<h3 id="删除问答-1">删除问答</h3>
+<p><code>DELETE</code> /site/remove</p>
+<table>
+<thead>
+<tr>
+<th id="参数" style="text-align:left;">参数</th>
+<th id="名称" style="text-align:left;">名称</th>
+<th id="类型" style="text-align:left;">类型</th>
+<th id="参考值" style="text-align:left;">参考值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">s_id</td>
+<td style="text-align:left;">接种点ID</td>
+<td style="text-align:left;">Int</td>
+<td style="text-align:left;">2</td>
+</tr>
+</tbody>
+</table>
+<p>成功返回参考</p>
+<pre><code class="json language-json">{
+    "code": 200
+}</code></pre>
+<p>失败返回参考</p>
+<pre><code class="json language-json">{
+    "code": 432,
+    "msg": "缺少接种点参数"
 }</code></pre>
 </div></body>
 </html>

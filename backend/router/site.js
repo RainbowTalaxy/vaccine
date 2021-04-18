@@ -1,11 +1,11 @@
 const router = new require('express').Router()
-const news_db = require('../sql/news')
+const news_db = require('../sql/site')
 
-router.all('/news', (_, res) => {
+router.all('/site', (_, res) => {
     res.send('hello')
 })
 
-router.get('/news/list', (_, res) => {
+router.get('/site/list', (_, res) => {
     news_db.findAll()
         .then(result => {
             res.send({
@@ -15,13 +15,13 @@ router.get('/news/list', (_, res) => {
         }, error => {
             console.log(error)
             res.send({
-                code: 401,
-                msg: '获取资讯列表失败'
+                code: 431,
+                msg: '获取接种点失败'
             })
         })
 })
 
-router.post('/news/add', (req, res) => {
+router.post('/site/add', (req, res) => {
     if (!req.session.pass || req.session.pass == false) {
         res.send({
             code: 400,
@@ -29,13 +29,13 @@ router.post('/news/add', (req, res) => {
         })
         return
     }
-    const { n_title, n_short, n_date, n_link } = req.body
-    if (n_title && n_short && n_date && n_link) {
+    const { s_name, s_address, s_longitude, s_latitude } = req.body
+    if (s_name && s_address && s_longitude && s_latitude) {
         news_db.add({
-            n_title: n_title,
-            n_short: n_short,
-            n_date: new Date(n_date).toLocaleDateString(),
-            n_link: n_link
+            s_name: s_name,
+            s_address: s_address,
+            s_longitude: s_longitude,
+            s_latitude: s_latitude
         }).then(_ => {
             res.send({
                 code: 200
@@ -43,19 +43,19 @@ router.post('/news/add', (req, res) => {
         }, error => {
             console.log(error)
             res.send({
-                code: 403,
-                msg: '添加资讯失败'
+                code: 433,
+                msg: '添加接种点失败'
             })
         })
     } else {
         res.send({
-            code: 402,
-            msg: '缺少资讯参数'
+            code: 432,
+            msg: '缺少接种点参数'
         })
     }
 })
 
-router.delete('/news/remove', (req, res) => {
+router.delete('/site/remove', (req, res) => {
     if (!req.session.pass || req.session.pass == false) {
         res.send({
             code: 400,
@@ -63,8 +63,8 @@ router.delete('/news/remove', (req, res) => {
         })
         return
     }
-    if (req.query.n_id) {
-        news_db.removeById(req.query.n_id)
+    if (req.query.s_id) {
+        news_db.removeById(req.query.s_id)
             .then(_ => {
                 res.send({
                     code: 200
@@ -72,13 +72,13 @@ router.delete('/news/remove', (req, res) => {
             }, error => {
                 console.log(error)
                 res.send({
-                    code: 404,
+                    code: 434,
                     msg: '删除资讯失败'
                 })
             })
     } else {
         res.send({
-            code: 402,
+            code: 432,
             msg: '缺少资讯参数'
         })
     }

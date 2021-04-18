@@ -34,6 +34,7 @@ app.use(require('./router/login'))
 app.use(require('./router/news'))
 app.use(require('./router/qna'))
 app.use(require('./router/notice'))
+app.use(require('./router/site'))
 
 app.listen(port, () => {
     console.log('listening on port ' + port + '...')
