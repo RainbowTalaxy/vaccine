@@ -1,6 +1,13 @@
 const router = new require('express').Router()
 const news_db = require('../sql/news')
 
+function dateToString(date) {
+    let result = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
+    return result
+}
+
+console.log(dateToString(new Date()))
+
 router.all('/news', (_, res) => {
     res.send('hello')
 })
@@ -34,7 +41,7 @@ router.post('/news/add', (req, res) => {
         news_db.add({
             n_title: n_title,
             n_short: n_short,
-            n_date: new Date(n_date).toLocaleDateString(),
+            n_date: dateToString(new Date(n_date)),
             n_link: n_link
         }).then(_ => {
             res.send({

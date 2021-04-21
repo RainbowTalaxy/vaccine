@@ -1,6 +1,11 @@
 const router = new require('express').Router()
 const qna_db = require('../sql/qna')
 
+function dateToString(date) {
+    let result = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
+    return result
+}
+
 router.all('/qna', (_, res) => {
     res.send('hello')
 })
@@ -34,7 +39,7 @@ router.post('/qna/add', (req, res) => {
         qna_db.add({
             q_question: q_question,
             q_answer: q_answer,
-            q_date: new Date(q_date).toLocaleDateString()
+            q_date: dateToString(new Date(q_date))
         }).then(_ => {
             res.send({
                 code: 200
