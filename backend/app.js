@@ -22,7 +22,7 @@ app.use(express.urlencoded({
 app.use(session({
     secret: 'vaccine',
     cookie: {
-        maxAge: 120000
+        maxAge: 1200000
     }
 }))
 
